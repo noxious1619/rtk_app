@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import {useDispatch, useSelector} from "react-redux";
+import { fetchUsers } from "../feature/user/userSlice.js";
 
 function UserComponent() {
     const dispatch = useDispatch();
-    const {user, loading, error} = useSelector((state) => state.user);
+    const {users, loading, error} = useSelector((state) => state.users);
 
     useEffect(() => {
         dispatch(fetchUsers());
@@ -15,10 +16,16 @@ function UserComponent() {
     
   return (
     <div>
-        User List : 
+        <h1
+            style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center"
+            }}
+        >User List</h1> 
         <ul>
             {
-                user.map((user) => (
+                users.map((user) => (
                     <li key={user.id}>
                         {user.name} - {user.email}
                     </li>

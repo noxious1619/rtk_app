@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import CounterReducer from "../feature/counter/counterSlice.js";
 import AuthReducer from "../feature/auth/AuthSlice.js";
-// import userReducer from "../feature/user/userSlice.js";
+import userReducer from "../feature/user/userSlice.js";
 
 const loggerMiddleware = storeAPI => next => action => {
   console.log('Dispatching action: ', action);
@@ -14,7 +14,8 @@ export const store = configureStore({
   reducer: {
     counter: CounterReducer,
     auth: AuthReducer,
-    // user: userReducer
+    users: userReducer
   },
   devTools: true
 });
+

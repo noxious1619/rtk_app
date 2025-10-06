@@ -1,7 +1,7 @@
 import AuthControl from "./components/AuthControl";
 import CounterControl from "./components/counterControl";
 import CounterDisplay from "./components/counterDisplay";
-// import UserComponent from "./components/userComponent";
+import UserComponent from "./components/userComponent";
 
 
 const App = () => {
@@ -22,7 +22,7 @@ const App = () => {
       <CounterDisplay /> 
       <CounterControl />
       <AuthControl />
-      {/* <UserComponent />  */}
+      <UserComponent /> 
 
     </div>
   )
